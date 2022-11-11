@@ -1,0 +1,29 @@
+FORMAT:
+*course code* *prereq1* *prereq2* ... *prereqn*
+*course name*
+*course department*
+
+ADC4M1 ADA1O ADA2O ADC3O AVI1O1 AVI2O AWQ2O ADD3M
+Drama/Visual Arts in the Community - Leadership
+Arts
+
+ADD4M1 ADD3M
+Drama - Production
+Arts
+
+AMU4M1 AMU3M
+Traditional Concert Band
+Arts
+
+AMG4M1 AMG3O
+Guitar
+Arts
+
+AMM4M1 AMM3M AMC3M
+Music and Computers
+Arts
+
+AWD4M1 AVI3M AWD3M1
+Visual Art/Design
+Arts
+
