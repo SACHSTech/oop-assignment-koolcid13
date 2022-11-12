@@ -27,3 +27,20 @@ AWD4M1 AVI3M AWD3M1
 Visual Art/Design
 Arts
 
+BAT4M1 BAF3M
+Financial Accounting Principles
+Business Studies
+
+BOH4M1
+Business Leadership: Management Fundamentals
+Business Studies
+
+IDC4U2 ENG3U1 ENG3UE NBE3U1 NBE3UE ENG3U
+Creative Advertising
+Business Studies
+
+CIA4U1 ENG3U ENG4U HRT3M HRT3ME NBE3U1 NBE3UE
+Economics - Analysing Current Economic Issues
+Business Studies
+
+// code for courses without prereqs to be double-checked later
