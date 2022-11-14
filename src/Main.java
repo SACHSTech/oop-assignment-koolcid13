@@ -35,7 +35,7 @@ public class Main {
         System.out.print ("How many credits do you have so far: ");
         intCreds = Integer.parseInt(key.readLine());
 
-    
+        
     }
     
 
