@@ -1,6 +1,7 @@
 // package line
 
 import java.io.*;
+import java.util.*;
 import java.util.ArrayList;
 // other imports
 
@@ -13,7 +14,7 @@ public class Main {
         
         BufferedReader key = new BufferedReader (new InputStreamReader (System.in));
 
-        String strName, strLast;
+        String strName, strLast, strInputClass;
         int int11courseCnt, intCreds;
         ArrayList <String> g11courseList = new ArrayList <String>();
 
@@ -35,6 +36,28 @@ public class Main {
         System.out.print ("How many credits do you have so far: ");
         intCreds = Integer.parseInt(key.readLine());
 
+
+        System.out.print ("What's one class on your selection? ");
+        strInputClass = key.readLine();
+
+        //read file to find course data, search implemented
+        File f = new File("src/CourseInfo.txt");
+        BufferedReader freader = new BufferedReader (new FileReader(f));
+        String s;
+        while((s = freader.readLine()) != null) {
+            String[] st = s.split(" ");
+            String code = st[0];
+            if (code != strInputClass) {
+                continue;
+            }
+            String num = Integer.parseInt(st[1]);
+            private ArrayList<String> prereqs = new ArrayList<String>();
+            // change place of arraylist when made into method
+            // add clear arraylist when made into method
+            for (int i = 2; i < i + num; i ++) {
+                prereqs.add(st[i]);
+            }
+        }
         
     }
     
