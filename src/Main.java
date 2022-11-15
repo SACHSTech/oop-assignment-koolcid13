@@ -1,21 +1,17 @@
 // package line
 
 import java.io.*;
-import java.nio.channels.SelectableChannel;
 import java.util.*;
 import java.util.ArrayList;
-// other imports
-
 
 //header (only works for grade 12)
 
 //javadoc
 public class Main {
     
-    int int11courseCnt, intCreds, int12courseCnt;
-    //declaration scopes to be double checked
+    static int int11courseCnt, intCreds, int12courseCnt;
     public static void main(String[] args) throws IOException{
-        
+
         BufferedReader key = new BufferedReader (new InputStreamReader (System.in));
 
         String strName, strLast, strInputClass;
@@ -76,10 +72,12 @@ public class Main {
             course1 = new ArtCourse(code, name, prereqs, 1);
             // change int enrolled
             System.out.println(course1.getName());
-
         }
-        // else if for other depts
 
+        else {course1 = new ArtCourse("a", "a", prereqs, int12courseCnt);}
+        // else if for other depts
+         
+        System.out.println (course1.hasPrereqs(g11courseList));
         
     }
 
@@ -98,7 +96,7 @@ public class Main {
             return false;
         } 
         return true;
-    }  
+    }
 
 
 }
