@@ -1,38 +1,110 @@
 FORMAT:
 *course code*_*number of prereqs*_*prereq1*_*prereq2* ... *prereqn*_*course name*_*course department*
 ---
+---
+---
 ADC4M1_7_ADA1O_ADA2O_ADC3O_AVI1O1_AVI2O_AWQ2O_ADD3M_Drama/Visual Arts in the Community - Leadership_Arts
-
+---
 ADD4M1_1_ADD3M_Drama - Production_Arts
-
+---
 AMU4M1_1_AMU3M_Traditional Concert Band_Arts
-
-AMG4M1 1 AMG3O
-Guitar
-Arts
-
-AMM4M1 2 AMM3M AMC3M
-Music and Computers
-Arts
-
-AWD4M1 2 AVI3M AWD3M1
-Visual Art/Design
-Arts
-
-BAT4M1 1 BAF3M
-Financial Accounting Principles
-Business Studies
-
-BOH4M1 0
-Business Leadership: Management Fundamentals
-Business Studies
-
-IDC4U2 5 ENG3U1 ENG3UE NBE3U1 NBE3UE ENG3U
-Creative Advertising
-Business Studies
-
-CIA4U1 6 ENG3U ENG4U HRT3M HRT3ME NBE3U1 NBE3UE
-Economics - Analysing Current Economic Issues
-Business Studies
-
-// code for courses without prereqs to be double-checked later
+---
+AMG4M1_1_AMG3O_Guitar_Arts
+---
+AMM4M1_2_AMM3M_AMC3M_Music and Computers_Arts
+---
+AWD4M1_2_AVI3M_AWD3M1_Visual Art/Design_Arts
+---
+BAT4M1_1_BAF3M_Financial Accounting Principles_Business Studies
+---
+BOH4M1_0_Business Leadership: Management Fundamentals_Business Studies
+---
+IDC4U2_5_ENG3U1_ENG3UE_NBE3U1_NBE3UE_ENG3U_Creative Advertising_Business Studies
+---
+CIA4U1_6_ENG3U_ENG4U_HRT3M_HRT3ME_NBE3U1_NBE3UE_Economics - Analysing Current Economic Issues_Business Studies
+---
+BDV4C1_0_Entrepreneurship: Venture Planning in an Electronic Age_Business Studies
+---
+BBB4M1_0_International Business Fundamentals_Business Studies
+---
+HSB4U1_7_ENG3U_ENG4U_HRT3M_HRT3ME_NBE3U1_NBE3UE_HSP3U_Challenge and Change in Society_Canadian and World Studies
+---
+HHS4U1_7_ENG3U_ENG4U_HRT3M_HRT3ME_NBE3U1_NBE3UE_HSP3U_Families in Canada_Canadian and World Studies
+---
+CGW4U1_6_ENG3U_ENG4U_HRT3M_NBE3U1_NBE3UE_HRT3ME_World Issues: A Geographic Analysis_Canadian and World Studies
+---
+CHY4U1_6_ENG3U_ENG4U_HRT3M1_NBE3U1_NBE3UE_HRT3ME_World History since the Fifteenth Century_Canadian and World Studies
+---
+CLN4U1_6_ENG3U_ENG4U_HRT3M_NBE3U1_NBE3UE_HRT3ME_Canadian and International Law_Canadian and World Studies
+---
+CLN4C1_1_CHV2O_Legal Studies_Canadian and World Studies
+---
+ENG4C1_4_ENG3C_ENG3U_NBE3C_NBE3U_English_English
+---
+ENG4U1_3_ENG3U1_NBE3U1_NBE3U_English_English
+---
+ETS4U1_4_ENG3U_NBE3U1_NBE3UE_NBE3U_Studies in Literature: Mystery & Horror_English
+---
+EWC4U1_3_ENG3U_NBE3U1_NBE3UE_The Writer's Craft_English
+---
+ENG4E1_3_ENG3E_ESLDO_NBE3E_English_English
+---
+ENG4UE_2_ENG3UE_NBE3UE_English (STREAM)_English
+---
+FSF4U1_1_FSF3U_French_French as a Second Language
+---
+PAF4OM_0_Personal & Fitness Activities (MALE)_Health and Physical Education
+---
+PPL4OP_0_Healthy Active Living Education_Health and Physical Education
+---
+PAF4OF_0_Personal & Fitness Activities (FEMALE)_Health and Physical Education
+---
+PSK4U1_11_SBI3U_SCH3U_SPH3U_SNC3M_PPL3O_PPZ3C_PPL4O_PAF3OF_PAF4OF_PAF3OM_PAF4OM_Introductory Kinesiology_Health and Physical Education
+---
+PLF4M1_10_PPL1O_PPL2O_PPL3O_PPZ3C_PPL4O_PSK4U_PAF3OF_PAF4OF_PAF3OM_PAF4OM_Recreation & Fitness Leadership_Health and Physical Education
+---
+MAP4C1_3_MBF3C_MCF3M_MCR3U_Foundations for College Mathematics_Mathematics
+---
+MCV4U1_1_MHF4U_Calculus and Vectors_Mathematics
+---
+MDM4U1_2_MCR3U_MCF3M_Mathematics of Data Management_Mathematics
+---
+MHF4U1_2_MCR3U_MCT4C_Advanced Functions_Mathematics
+---
+MCT4C1_2_MCF3M_MCR3U_Mathematics for College Technology_Mathematics
+---
+MEL4E1_1_MEL3E_Mathematics for Work and Everyday Life_Mathematics
+---
+MHF4UE_1_MCR3UE_Advanced Functions (STREAM)_Mathematics
+---
+MCV4UE_3_MCR3UE_MHF4UE_MHF4UE_Calculus and Vectors (STREAM)_Mathematics
+---
+HZT4U1_4_HRE3M_HRT3M_NBE3U_HSP3U_Philosophy: Questions and Theories_Religion
+---
+HRE4M1_0_Religious Education_Religion
+---
+HRE4O1_0_Church and Culture_Religion
+---
+SBI4U1_1_SBI3U_Biology_Science
+---
+SCH4U1_1_SCH3U1_Chemistry_Science
+---
+SCH4UE_1_SCH3UE_Chemistry (STREAM)_Science
+---
+SPH4U1_1_SPH3U_Physics_Science
+---
+GLE4O1_0_Advanced Learning Strategies: Skills for Success After Secondary School_Special Education
+---
+TGJ4M1_1_TGJ3M_Communications Technology_Technological Education
+---
+TGJ4O1_0_Communications Technology: Digital Imagery and Web Design_Technological Education
+---
+TGG4M1_0_Communications Technology: Print and Graphic Communications (YEARBOOK)_Technological Education
+---
+TGP4M1_0_Communications Technology: Photography and Digital Imaging (YEARBOOK)_Technological Education
+---
+ICS4U1_1_ICS3U_Computer Science_Technological Education
+---
+TEJ4M1_1_TEJ3M_Computer Engineering Technology_Technological Education
+---
+TDJ4M1_2_TDJ3M_TDV3M_Technological Design_Technological Education
