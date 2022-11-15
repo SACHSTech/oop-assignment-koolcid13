@@ -1,17 +1,11 @@
 FORMAT:
-*course code* *number of prereqs* *prereq1* *prereq2* ... *prereqn*
-*course name*
-*course department*
+*course code*_*number of prereqs*_*prereq1*_*prereq2* ... *prereqn*_*course name*_*course department*
 ---
 ADC4M1_7_ADA1O_ADA2O_ADC3O_AVI1O1_AVI2O_AWQ2O_ADD3M_Drama/Visual Arts in the Community - Leadership_Arts
 
-ADD4M1 1 ADD3M
-Drama - Production
-Arts
+ADD4M1_1_ADD3M_Drama - Production_Arts
 
-AMU4M1 1 AMU3M
-Traditional Concert Band
-Arts
+AMU4M1_1_AMU3M_Traditional Concert Band_Arts
 
 AMG4M1 1 AMG3O
 Guitar

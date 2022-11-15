@@ -1,11 +1,12 @@
 // package line
-import java.util.ArrayList;
+import java.util.*;
+
 
 public class Course {
     
     private String strCode;
     private String strName;
-    private ArrayList<String> prereqs = new ArrayList<>();
+    private ArrayList<String> prereqs;
     private int intEnrolledCnt;
 
     //javadoc

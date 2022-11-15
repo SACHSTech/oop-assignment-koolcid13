@@ -1,4 +1,6 @@
-public class ScienceCourse {
+import java.util.*;
+
+public class ScienceCourse extends Course {
     
     private int intNumberOfLabs;
 

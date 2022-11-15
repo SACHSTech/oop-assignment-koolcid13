@@ -1,4 +1,6 @@
-public class TechCourse {
+import java.util.*;
+
+public class TechCourse extends Course {
     
     private boolean requiresDevice;
 
