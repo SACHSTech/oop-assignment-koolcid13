@@ -29,5 +29,14 @@ public class Course {
         return intEnrolledCnt;
     }
 
-    
+    public boolean hasPrereqs(ArrayList<String> coursesTaken) {
+        for (String course : coursesTaken) {
+            for (String prereqCourse : prereqs) {
+                if (course.equals (prereqCourse)) {
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
 }

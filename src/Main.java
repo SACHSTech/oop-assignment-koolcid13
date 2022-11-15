@@ -1,6 +1,7 @@
 // package line
 
 import java.io.*;
+import java.nio.channels.SelectableChannel;
 import java.util.*;
 import java.util.ArrayList;
 // other imports
@@ -10,12 +11,14 @@ import java.util.ArrayList;
 
 //javadoc
 public class Main {
+    
+    int int11courseCnt, intCreds, int12courseCnt;
+    //declaration scopes to be double checked
     public static void main(String[] args) throws IOException{
         
         BufferedReader key = new BufferedReader (new InputStreamReader (System.in));
 
         String strName, strLast, strInputClass;
-        int int11courseCnt, intCreds;
         ArrayList <String> g11courseList = new ArrayList <String>();
         ArrayList<String> prereqs = new ArrayList<String>();
 
@@ -36,7 +39,9 @@ public class Main {
 
         System.out.print ("How many credits do you have so far: ");
         intCreds = Integer.parseInt(key.readLine());
-
+        
+        System.out.print ("How many courses are you planning on taking this year: ");
+        int12courseCnt = Integer.parseInt(key.readLine());
 
         System.out.print ("What's one class on your selection? ");
         strInputClass = key.readLine();
@@ -64,16 +69,36 @@ public class Main {
         }
         // create object example
         // error if dept is not initialized, consider
+        ArtCourse course1;
+        //for now declaration as course - default
+        Course course2, course3, course4, course5, course6, course7, course8;
         if (dept.equals("Arts")) {
-            ArtCourse course1 = new ArtCourse(code, name, prereqs, 1);
+            course1 = new ArtCourse(code, name, prereqs, 1);
             // change int enrolled
             System.out.println(course1.getName());
 
         }
         // else if for other depts
+
         
     }
-    
+
+    public String selectionValid (boolean tookEng) {
+        if (intCreds + int12courseCnt < 30) {
+            return "insufficient credits";
+        }
+        if (! tookEng) {
+            return "no english";
+        }
+        return "ok";
+    }
+
+    public boolean hasEnglish(String dep1, String dep2, String dep3, String dep4, String dep5, String dep6, String dep7, String dep8)  {
+        if (dep1 != "English" && dep2 != "English" && dep3 != "English" && dep4 != "English" && dep5 != "English" && dep6 != "English" && dep7 != "English" && dep8 != "English") {
+            return false;
+        } 
+        return true;
+    }  
 
 
 }
