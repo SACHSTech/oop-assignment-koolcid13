@@ -4,7 +4,7 @@ import java.io.*;
 import java.util.*;
 import java.util.ArrayList;
 
-//header (only works for grade 12)
+//header
 
 //javadoc
 public class Main {
