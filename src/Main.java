@@ -45,18 +45,20 @@ public class Main {
         BufferedReader freader = new BufferedReader (new FileReader(f));
         String s;
         while((s = freader.readLine()) != null) {
-            String[] st = s.split(" ");
+            String[] st = s.split("_");
             String code = st[0];
-            if (code != strInputClass) {
+            if (! (code.equals(strInputClass))) {
                 continue;
             }
-            String num = Integer.parseInt(st[1]);
-            private ArrayList<String> prereqs = new ArrayList<String>();
+            int num = Integer.parseInt(st[1]);
+
+            ArrayList<String> prereqs = new ArrayList<String>();
             // change place of arraylist when made into method
             // add clear arraylist when made into method
-            for (int i = 2; i < i + num; i ++) {
+            for (int i = 2; i < 2 + num; i ++) {
                 prereqs.add(st[i]);
             }
+
         }
         
     }

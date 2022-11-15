@@ -2,10 +2,8 @@ FORMAT:
 *course code* *number of prereqs* *prereq1* *prereq2* ... *prereqn*
 *course name*
 *course department*
-
-ADC4M1 7 ADA1O ADA2O ADC3O AVI1O1 AVI2O AWQ2O ADD3M
-Drama/Visual Arts in the Community - Leadership
-Arts
+---
+ADC4M1_7_ADA1O_ADA2O_ADC3O_AVI1O1_AVI2O_AWQ2O_ADD3M_Drama/Visual Arts in the Community - Leadership_Arts
 
 ADD4M1 1 ADD3M
 Drama - Production

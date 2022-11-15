@@ -5,7 +5,7 @@ public class Course {
     
     private String strCode;
     private String strName;
-    private ArrayList<String> prereqs;
+    private ArrayList<String> prereqs = new ArrayList<>();
     private int intEnrolledCnt;
 
     //javadoc
