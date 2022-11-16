@@ -3,23 +3,32 @@
 import java.io.*;
 import java.util.*;
 
-import org.junit.platform.engine.support.discovery.SelectorResolver.Match;
 
 //header
 
-//javadoc for all methods
+//javadoc for all methods to be added
 public class Main {
     
     static int int11courseCnt, intCreds, int12courseCnt;
+    static String s, code = "", name = "", dept = "";
+    static ArrayList<String> prereqs = new ArrayList<String>();
+    List<ArtCourse> artArrayList = new ArrayList<ArtCourse>();
+    List<BusinessCourse> businessArrayList = new ArrayList<BusinessCourse>();
+    List<CAndWCourse> cAndWArrayList = new ArrayList<CAndWCourse>();
+    List<EnglishCourse> englishArrayList = new ArrayList<EnglishCourse>();
+    List<FrenchCourse> frenchArrayList = new ArrayList<FrenchCourse>();
+    List<MathCourse> mathArrayList = new ArrayList<MathCourse>();
+    List<PhysEdCourse> physedArrayList = new ArrayList<PhysEdCourse>();
+    List<ReligionCourse> religionArrayList = new ArrayList<ReligionCourse>();
+    List<ScienceCourse> scienceArrayList = new ArrayList<ScienceCourse>();
+    List<TechCourse> techArrayList = new ArrayList<TechCourse>();
+
     public static void main(String[] args) throws IOException{
 
         BufferedReader key = new BufferedReader (new InputStreamReader (System.in));
 
         String strName, strLast, strInputClass;
         ArrayList <String> g11courseList = new ArrayList <String>();
-        ArrayList<String> prereqs = new ArrayList<String>();
-        List<Course> probCourses = new ArrayList<Course>();
-
 
         // intro lines
         System.out.print ("Enter your name please: ");
@@ -48,7 +57,6 @@ public class Main {
         //read file to find course data, search implemented
         File f = new File("src/CourseInfo.txt");
         BufferedReader freader = new BufferedReader (new FileReader(f));
-        String s, code = "", name = "", dept = "";
         while((s = freader.readLine()) != null) {
             String[] st = s.split("_");
             code = st[0];
@@ -69,41 +77,55 @@ public class Main {
         // create object example
         // error if dept is not initialized, consider
         //for now declaration as course - default
+
+        
+        
+
+        
+    }
+
+    public void objectCreation (String dept) {
         if (dept.equals ("Arts")) {
             ArtCourse course = new ArtCourse(code, name, prereqs, 1);
+            artArrayList.add (course);
         }
         else if (dept.equals ("Business Studies")) {
-            BusinessCourse course = new BusinessCourse(code, strName, prereqs, 1);
+            BusinessCourse course = new BusinessCourse(code, name, prereqs, 1);
+            businessArrayList.add (course);
         }
         else if (dept.equals ("Canadian and World Studies")) {
-            cAndWCourse course = new cAndWCourse(code, strName, prereqs, 1);
+            CAndWCourse course = new CAndWCourse(code, name, prereqs, 1);
+            cAndWArrayList.add (course);
         }
         else if (dept.equals ("English")) {
-            EnglishCourse course = new EnglishCourse(code, strName, prereqs, 1);
+            EnglishCourse course = new EnglishCourse(code, name, prereqs, 1);
+            englishArrayList.add (course);
         }
         else if (dept.equals ("French as a Second Language")) {
-            FrenchCourse course = new FrenchCourse(code, strName, prereqs, 1);
+            FrenchCourse course = new FrenchCourse(code, name, prereqs, 1);
+            frenchArrayList.add (course);
         }
         else if (dept.equals ("Health and Physical Education")) {
-            PhysEdCourse course = new PhysEdCourse(code, strName, prereqs, 1);
+            PhysEdCourse course = new PhysEdCourse(code, name, prereqs, 1);
+            physedArrayList.add (course);
         }
         else if (dept.equals ("Mathematics")) {
-            MathCourse course = new MathCourse(code, strName, prereqs, 1);
+            MathCourse course = new MathCourse(code, name, prereqs, 1);
+            mathArrayList.add (course);
         }
         else if (dept.equals("Religion")) {
-            ReligionCourse course = new ReligionCourse(code, strName, prereqs, 1);
+            ReligionCourse course = new ReligionCourse(code, name, prereqs, 1);
+            religionArrayList.add (course);
         }
         else if (dept.equals ("Science")) {
-            ScienceCourse course = new ScienceCourse(code, strName, prereqs, int12courseCnt, 1);
+            ScienceCourse course = new ScienceCourse(code, name, prereqs, int12courseCnt, 1);
+            scienceArrayList.add (course);
         }
         else {
             System.out.println ("this was the else: " + dept);
-            TechCourse course = new TechCourse(code, strName, prereqs, int11courseCnt, false);
+            TechCourse course = new TechCourse(code, name, prereqs, int11courseCnt, false);
+            techArrayList.add (course);
         }
-
-         
-        System.out.println (course.hasPrereqs(g11courseList));
-        
     }
 
     public String selectionValid (boolean tookEng) {
