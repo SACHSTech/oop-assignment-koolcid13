@@ -59,6 +59,7 @@ public class Main {
             findCode(strInputClass);     
         }
       
+        System.out.println (prereqsMet());
         
     }
 
@@ -81,10 +82,7 @@ public class Main {
             // change declaration when made into method
             name = st[2 + num];
             dept = st[3 + num];
-            for (int i = 0; i < prereqs.size(); i ++) {
-                System.out.print (prereqs.get(i));
-            }
-            System.out.println ("");
+            
             objectCreation(dept);
             break;
 
@@ -140,70 +138,78 @@ public class Main {
         // function to be checked later
     }
 
-    public String selectionValid (boolean tookEng) {
+    public static String selectionValid (boolean tookEng) {
         if (intCreds + int12courseCnt < 30) {
             return "insufficient credits";
         }
         if (! tookEng) {
             return "no english";
         }
-        for (int i = 0; i < artArrayList.size(); i ++) {
-            if (! artArrayList.get(i).hasPrereqs(g11courseList)) {
-                return "prereqs not met";
-            }
-        }
-        for (int i = 0; i < businessArrayList.size(); i ++) {
-            if (! businessArrayList.get(i).hasPrereqs(g11courseList)) {
-                return "prereqs not met";
-            }
-        }
-        for (int i = 0; i < cAndWArrayList.size(); i ++) {
-            if (! cAndWArrayList.get(i).hasPrereqs(g11courseList)) {
-                return "prereqs not met";
-            }
-        }
-        for (int i = 0; i < englishArrayList.size(); i ++) {
-            if (! englishArrayList.get(i).hasPrereqs(g11courseList)) {
-                return "prereqs not met";
-            }
-        }
-        for (int i = 0; i < frenchArrayList.size(); i ++) {
-            if (! frenchArrayList.get(i).hasPrereqs(g11courseList)) {
-                return "prereqs not met";
-            }
-        }
-        for (int i = 0; i < mathArrayList.size(); i ++) {
-            if (! mathArrayList.get(i).hasPrereqs(g11courseList)) {
-                return "prereqs not met";
-            }
-        }
-        for (int i = 0; i < physedArrayList.size(); i ++) {
-            if (! physedArrayList.get(i).hasPrereqs(g11courseList)) {
-                return "prereqs not met";
-            }
-        }
-        for (int i = 0; i < religionArrayList.size(); i ++) {
-            if (! religionArrayList.get(i).hasPrereqs(g11courseList)) {
-                return "prereqs not met";
-            }
-        }
-        for (int i = 0; i < scienceArrayList.size(); i ++) {
-            if (! scienceArrayList.get(i).hasPrereqs(g11courseList)) {
-                return "prereqs not met";
-            }
-        }
-        for (int i = 0; i < techArrayList.size(); i ++) {
-            if (! techArrayList.get(i).hasPrereqs(g11courseList)) {
-                return "prereqs not met";
-            }
+        if (! prereqsMet()) {
+            return "not enough prereqs";
         }
         return "ok";
     }
 
-    public boolean hasEnglish(String dep1, String dep2, String dep3, String dep4, String dep5, String dep6, String dep7, String dep8)  {
+    // change hasEnglish, very messy
+    public static boolean hasEnglish(String dep1, String dep2, String dep3, String dep4, String dep5, String dep6, String dep7, String dep8)  {
         if (dep1 != "English" && dep2 != "English" && dep3 != "English" && dep4 != "English" && dep5 != "English" && dep6 != "English" && dep7 != "English" && dep8 != "English") {
             return false;
         } 
+        return true;
+    }
+
+    public static boolean prereqsMet() {
+        for (int i = 0; i < artArrayList.size(); i ++) {
+            if (! artArrayList.get(i).hasPrereqs(g11courseList)) {
+                return false;
+            }
+        }
+        for (int i = 0; i < businessArrayList.size(); i ++) {
+            if (! businessArrayList.get(i).hasPrereqs(g11courseList)) {
+                return false;
+            }
+        }
+        for (int i = 0; i < cAndWArrayList.size(); i ++) {
+            if (! cAndWArrayList.get(i).hasPrereqs(g11courseList)) {
+                return false;
+            }
+        }
+        for (int i = 0; i < englishArrayList.size(); i ++) {
+            if (! englishArrayList.get(i).hasPrereqs(g11courseList)) {
+                return false;
+            }
+        }
+        for (int i = 0; i < frenchArrayList.size(); i ++) {
+            if (! frenchArrayList.get(i).hasPrereqs(g11courseList)) {
+                return false;
+            }
+        }
+        for (int i = 0; i < mathArrayList.size(); i ++) {
+            if (! mathArrayList.get(i).hasPrereqs(g11courseList)) {
+                return false;
+            }
+        }
+        for (int i = 0; i < physedArrayList.size(); i ++) {
+            if (! physedArrayList.get(i).hasPrereqs(g11courseList)) {
+                return false;
+            }
+        }
+        for (int i = 0; i < religionArrayList.size(); i ++) {
+            if (! religionArrayList.get(i).hasPrereqs(g11courseList)) {
+                return false;
+            }
+        }
+        for (int i = 0; i < scienceArrayList.size(); i ++) {
+            if (! scienceArrayList.get(i).hasPrereqs(g11courseList)) {
+                return false;
+            }
+        }
+        for (int i = 0; i < techArrayList.size(); i ++) {
+            if (! techArrayList.get(i).hasPrereqs(g11courseList)) {
+                return false;
+            }
+        }
         return true;
     }
 
