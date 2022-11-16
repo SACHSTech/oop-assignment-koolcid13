@@ -93,8 +93,6 @@ SCH4UE_1_SCH3UE_Chemistry (STREAM)_Science
 ---
 SPH4U1_1_SPH3U_Physics_Science
 ---
-GLE4O1_0_Advanced Learning Strategies: Skills for Success After Secondary School_Special Education
----
 TGJ4M1_1_TGJ3M_Communications Technology_Technological Education
 ---
 TGJ4O1_0_Communications Technology: Digital Imagery and Web Design_Technological Education

@@ -2,11 +2,12 @@
 
 import java.io.*;
 import java.util.*;
-import java.util.ArrayList;
+
+import org.junit.platform.engine.support.discovery.SelectorResolver.Match;
 
 //header
 
-//javadoc
+//javadoc for all methods
 public class Main {
     
     static int int11courseCnt, intCreds, int12courseCnt;
@@ -17,6 +18,8 @@ public class Main {
         String strName, strLast, strInputClass;
         ArrayList <String> g11courseList = new ArrayList <String>();
         ArrayList<String> prereqs = new ArrayList<String>();
+        List<Course> probCourses = new ArrayList<Course>();
+
 
         // intro lines
         System.out.print ("Enter your name please: ");
@@ -65,19 +68,41 @@ public class Main {
         }
         // create object example
         // error if dept is not initialized, consider
-        ArtCourse course1;
         //for now declaration as course - default
-        Course course2, course3, course4, course5, course6, course7, course8;
-        if (dept.equals("Arts")) {
-            course1 = new ArtCourse(code, name, prereqs, 1);
-            // change int enrolled
-            System.out.println(course1.getName());
+        if (dept.equals ("Arts")) {
+            ArtCourse course = new ArtCourse(code, name, prereqs, 1);
+        }
+        else if (dept.equals ("Business Studies")) {
+            BusinessCourse course = new BusinessCourse(code, strName, prereqs, 1);
+        }
+        else if (dept.equals ("Canadian and World Studies")) {
+            cAndWCourse course = new cAndWCourse(code, strName, prereqs, 1);
+        }
+        else if (dept.equals ("English")) {
+            EnglishCourse course = new EnglishCourse(code, strName, prereqs, 1);
+        }
+        else if (dept.equals ("French as a Second Language")) {
+            FrenchCourse course = new FrenchCourse(code, strName, prereqs, 1);
+        }
+        else if (dept.equals ("Health and Physical Education")) {
+            PhysEdCourse course = new PhysEdCourse(code, strName, prereqs, 1);
+        }
+        else if (dept.equals ("Mathematics")) {
+            MathCourse course = new MathCourse(code, strName, prereqs, 1);
+        }
+        else if (dept.equals("Religion")) {
+            ReligionCourse course = new ReligionCourse(code, strName, prereqs, 1);
+        }
+        else if (dept.equals ("Science")) {
+            ScienceCourse course = new ScienceCourse(code, strName, prereqs, int12courseCnt, 1);
+        }
+        else {
+            System.out.println ("this was the else: " + dept);
+            TechCourse course = new TechCourse(code, strName, prereqs, int11courseCnt, false);
         }
 
-        else {course1 = new ArtCourse("a", "a", prereqs, int12courseCnt);}
-        // else if for other depts
          
-        System.out.println (course1.hasPrereqs(g11courseList));
+        System.out.println (course.hasPrereqs(g11courseList));
         
     }
 
