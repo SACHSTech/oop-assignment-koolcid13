@@ -12,16 +12,16 @@ public class Main {
     static int int11courseCnt, intCreds, int12courseCnt;
     static String s, code = "", name = "", dept = "";
     static ArrayList<String> prereqs = new ArrayList<String>();
-    List<ArtCourse> artArrayList = new ArrayList<ArtCourse>();
-    List<BusinessCourse> businessArrayList = new ArrayList<BusinessCourse>();
-    List<CAndWCourse> cAndWArrayList = new ArrayList<CAndWCourse>();
-    List<EnglishCourse> englishArrayList = new ArrayList<EnglishCourse>();
-    List<FrenchCourse> frenchArrayList = new ArrayList<FrenchCourse>();
-    List<MathCourse> mathArrayList = new ArrayList<MathCourse>();
-    List<PhysEdCourse> physedArrayList = new ArrayList<PhysEdCourse>();
-    List<ReligionCourse> religionArrayList = new ArrayList<ReligionCourse>();
-    List<ScienceCourse> scienceArrayList = new ArrayList<ScienceCourse>();
-    List<TechCourse> techArrayList = new ArrayList<TechCourse>();
+    static List<ArtCourse> artArrayList = new ArrayList<ArtCourse>();
+    static List<BusinessCourse> businessArrayList = new ArrayList<BusinessCourse>();
+    static List<CAndWCourse> cAndWArrayList = new ArrayList<CAndWCourse>();
+    static List<EnglishCourse> englishArrayList = new ArrayList<EnglishCourse>();
+    static List<FrenchCourse> frenchArrayList = new ArrayList<FrenchCourse>();
+    static List<MathCourse> mathArrayList = new ArrayList<MathCourse>();
+    static List<PhysEdCourse> physedArrayList = new ArrayList<PhysEdCourse>();
+    static List<ReligionCourse> religionArrayList = new ArrayList<ReligionCourse>();
+    static List<ScienceCourse> scienceArrayList = new ArrayList<ScienceCourse>();
+    static List<TechCourse> techArrayList = new ArrayList<TechCourse>();
 
     public static void main(String[] args) throws IOException{
 
@@ -51,9 +51,18 @@ public class Main {
         System.out.print ("How many courses are you planning on taking this year: ");
         int12courseCnt = Integer.parseInt(key.readLine());
 
-        System.out.print ("What's one class on your selection? ");
-        strInputClass = key.readLine();
+        for (int i = 0; i < int12courseCnt; i++) {
+            System.out.print ("What's one class on your selection? ");
+            strInputClass = key.readLine();
+    
+            findCode(strInputClass);        
+            objectCreation (dept);        
+        }
+        
+        
+    }
 
+    public static void findCode (String strInputClass) throws FileNotFoundException, IOException{
         //read file to find course data, search implemented
         File f = new File("src/CourseInfo.txt");
         BufferedReader freader = new BufferedReader (new FileReader(f));
@@ -74,55 +83,48 @@ public class Main {
             dept = st[3 + num];
 
         }
-        // create object example
-        // error if dept is not initialized, consider
-        //for now declaration as course - default
-
-        
-        
-
-        
     }
 
-    public void objectCreation (String dept) {
+    public static void objectCreation (String dept) {
+        Random random = new Random();
+        int intEnrolledRand = random.nextInt (30);
         if (dept.equals ("Arts")) {
-            ArtCourse course = new ArtCourse(code, name, prereqs, 1);
+            ArtCourse course = new ArtCourse(code, name, prereqs, intEnrolledRand);
             artArrayList.add (course);
         }
         else if (dept.equals ("Business Studies")) {
-            BusinessCourse course = new BusinessCourse(code, name, prereqs, 1);
+            BusinessCourse course = new BusinessCourse(code, name, prereqs, intEnrolledRand);
             businessArrayList.add (course);
         }
         else if (dept.equals ("Canadian and World Studies")) {
-            CAndWCourse course = new CAndWCourse(code, name, prereqs, 1);
+            CAndWCourse course = new CAndWCourse(code, name, prereqs, intEnrolledRand);
             cAndWArrayList.add (course);
         }
         else if (dept.equals ("English")) {
-            EnglishCourse course = new EnglishCourse(code, name, prereqs, 1);
+            EnglishCourse course = new EnglishCourse(code, name, prereqs, intEnrolledRand);
             englishArrayList.add (course);
         }
         else if (dept.equals ("French as a Second Language")) {
-            FrenchCourse course = new FrenchCourse(code, name, prereqs, 1);
+            FrenchCourse course = new FrenchCourse(code, name, prereqs, intEnrolledRand);
             frenchArrayList.add (course);
         }
         else if (dept.equals ("Health and Physical Education")) {
-            PhysEdCourse course = new PhysEdCourse(code, name, prereqs, 1);
+            PhysEdCourse course = new PhysEdCourse(code, name, prereqs, intEnrolledRand);
             physedArrayList.add (course);
         }
         else if (dept.equals ("Mathematics")) {
-            MathCourse course = new MathCourse(code, name, prereqs, 1);
+            MathCourse course = new MathCourse(code, name, prereqs, intEnrolledRand);
             mathArrayList.add (course);
         }
         else if (dept.equals("Religion")) {
-            ReligionCourse course = new ReligionCourse(code, name, prereqs, 1);
+            ReligionCourse course = new ReligionCourse(code, name, prereqs, intEnrolledRand);
             religionArrayList.add (course);
         }
         else if (dept.equals ("Science")) {
-            ScienceCourse course = new ScienceCourse(code, name, prereqs, int12courseCnt, 1);
+            ScienceCourse course = new ScienceCourse(code, name, prereqs, int12courseCnt, intEnrolledRand);
             scienceArrayList.add (course);
         }
         else {
-            System.out.println ("this was the else: " + dept);
             TechCourse course = new TechCourse(code, name, prereqs, int11courseCnt, false);
             techArrayList.add (course);
         }
