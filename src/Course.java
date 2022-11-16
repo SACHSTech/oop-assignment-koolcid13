@@ -25,7 +25,11 @@ public class Course {
         return this.strCode;
     }
 
-    public int intEnrolledCnt() {
+    public ArrayList<String> getPrereqs() {
+        return prereqs;
+    }
+
+    public int getEnrolledCnt() {
         return intEnrolledCnt;
     }
 
