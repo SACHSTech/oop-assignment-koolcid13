@@ -10,10 +10,10 @@ public class Course {
     private int intEnrolledCnt;
 
     //javadoc
-    public Course (String strCode, String strName, ArrayList<String> prereqs, int intEnrolledCnt) {
+    public Course (String strCode, String strName, ArrayList<String> prereqsInput, int intEnrolledCnt) {
         this.strCode = strCode;
         this.strName = strName;
-        this.prereqs = prereqs; // double check if works or try clone
+        this.prereqs = (ArrayList)prereqsInput.clone(); // double check if works or try clone
         this.intEnrolledCnt = intEnrolledCnt;
     }
 

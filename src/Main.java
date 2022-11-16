@@ -56,10 +56,9 @@ public class Main {
             System.out.print ("What's one class on your selection? ");
             strInputClass = key.readLine();
     
-            findCode(strInputClass);        
-            objectCreation (dept);        
+            findCode(strInputClass);     
         }
-        
+      
         
     }
 
@@ -82,33 +81,16 @@ public class Main {
             // change declaration when made into method
             name = st[2 + num];
             dept = st[3 + num];
+            for (int i = 0; i < prereqs.size(); i ++) {
+                System.out.print (prereqs.get(i));
+            }
+            System.out.println ("");
+            objectCreation(dept);
+            break;
 
         }
 
-        for (int i = 0; i < artArrayList.size(); i ++) {
-            System.out.println (artArrayList.get(i).getName());
-            System.out.println (artArrayList.get(i).getCode());
-            System.out.println (artArrayList.get(i).getPrereqs());
-            System.out.println (artArrayList.get(i).getEnrolledCnt());           
-        }
-        for (int i = 0; i < businessArrayList.size(); i ++) {
-            System.out.println (businessArrayList.get(i).getName());
-            System.out.println (businessArrayList.get(i).getCode());
-            System.out.println (businessArrayList.get(i).getPrereqs());
-            System.out.println (businessArrayList.get(i).getEnrolledCnt());           
-        }
-        for (int i = 0; i < englishArrayList.size(); i ++) {
-            System.out.println (englishArrayList.get(i).getName());
-            System.out.println (englishArrayList.get(i).getCode());
-            System.out.println (englishArrayList.get(i).getPrereqs());
-            System.out.println (englishArrayList.get(i).getEnrolledCnt());           
-        }
-        for (int i = 0; i < techArrayList.size(); i ++) {
-            System.out.println (techArrayList.get(i).getName());
-            System.out.println (techArrayList.get(i).getCode());
-            System.out.println (techArrayList.get(i).getPrereqs());
-            System.out.println (techArrayList.get(i).getEnrolledCnt());           
-        }
+        
     }
 
     public static void objectCreation (String dept) {
