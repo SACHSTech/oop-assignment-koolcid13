@@ -12,6 +12,7 @@ public class Main {
     static int int11courseCnt, intCreds, int12courseCnt;
     static String s, code = "", name = "", dept = "";
     static ArrayList<String> prereqs = new ArrayList<String>();
+    static ArrayList<String> g11courseList = new ArrayList <String>();
     static List<ArtCourse> artArrayList = new ArrayList<ArtCourse>();
     static List<BusinessCourse> businessArrayList = new ArrayList<BusinessCourse>();
     static List<CAndWCourse> cAndWArrayList = new ArrayList<CAndWCourse>();
@@ -23,12 +24,12 @@ public class Main {
     static List<ScienceCourse> scienceArrayList = new ArrayList<ScienceCourse>();
     static List<TechCourse> techArrayList = new ArrayList<TechCourse>();
 
+
     public static void main(String[] args) throws IOException{
 
         BufferedReader key = new BufferedReader (new InputStreamReader (System.in));
 
         String strName, strLast, strInputClass;
-        ArrayList <String> g11courseList = new ArrayList <String>();
 
         // intro lines
         System.out.print ("Enter your name please: ");
@@ -128,6 +129,8 @@ public class Main {
             TechCourse course = new TechCourse(code, name, prereqs, int11courseCnt, false);
             techArrayList.add (course);
         }
+        prereqs.clear();
+        // function to be checked later
     }
 
     public String selectionValid (boolean tookEng) {
@@ -136,6 +139,56 @@ public class Main {
         }
         if (! tookEng) {
             return "no english";
+        }
+        for (int i = 0; i < artArrayList.size(); i ++) {
+            if (! artArrayList.get(i).hasPrereqs(g11courseList)) {
+                return "prereqs not met";
+            }
+        }
+        for (int i = 0; i < businessArrayList.size(); i ++) {
+            if (! businessArrayList.get(i).hasPrereqs(g11courseList)) {
+                return "prereqs not met";
+            }
+        }
+        for (int i = 0; i < cAndWArrayList.size(); i ++) {
+            if (! cAndWArrayList.get(i).hasPrereqs(g11courseList)) {
+                return "prereqs not met";
+            }
+        }
+        for (int i = 0; i < englishArrayList.size(); i ++) {
+            if (! englishArrayList.get(i).hasPrereqs(g11courseList)) {
+                return "prereqs not met";
+            }
+        }
+        for (int i = 0; i < frenchArrayList.size(); i ++) {
+            if (! frenchArrayList.get(i).hasPrereqs(g11courseList)) {
+                return "prereqs not met";
+            }
+        }
+        for (int i = 0; i < mathArrayList.size(); i ++) {
+            if (! mathArrayList.get(i).hasPrereqs(g11courseList)) {
+                return "prereqs not met";
+            }
+        }
+        for (int i = 0; i < physedArrayList.size(); i ++) {
+            if (! physedArrayList.get(i).hasPrereqs(g11courseList)) {
+                return "prereqs not met";
+            }
+        }
+        for (int i = 0; i < religionArrayList.size(); i ++) {
+            if (! religionArrayList.get(i).hasPrereqs(g11courseList)) {
+                return "prereqs not met";
+            }
+        }
+        for (int i = 0; i < scienceArrayList.size(); i ++) {
+            if (! scienceArrayList.get(i).hasPrereqs(g11courseList)) {
+                return "prereqs not met";
+            }
+        }
+        for (int i = 0; i < techArrayList.size(); i ++) {
+            if (! techArrayList.get(i).hasPrereqs(g11courseList)) {
+                return "prereqs not met";
+            }
         }
         return "ok";
     }
