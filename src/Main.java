@@ -10,7 +10,7 @@ import java.util.*;
 public class Main {
     
     static int intLastcourseCnt, intCreds, int12courseCnt;
-    static double dblStudentCost = 0;
+    static double dblStudentCost = 0, dblLastAvg;
     static String s, code = "", name = "", dept = "";
     static ArrayList<String> prereqs = new ArrayList<String>();
     static ArrayList<String> prevCourseList = new ArrayList <String>();
@@ -44,6 +44,9 @@ public class Main {
         strLast = key.readLine();
         System.out.print ("How many courses have you take so far: ");
         intLastcourseCnt = Integer.parseInt(key.readLine());
+        System.out.print ("What was your average last year: ");
+        dblLastAvg = Integer.parseInt(key.readLine());
+        
 
         for (int i = 1; i <= intLastcourseCnt; i ++) {
             String strInput;
@@ -107,7 +110,7 @@ public class Main {
             BusinessCourse course = new BusinessCourse(code, name, prereqs, intEnrolledRand);
             businessArrayList.add (course);
             if (businessArrayList.size() == 1) {
-                dblStudentCost += (businessArrayList.get(0).businessFairInvest());
+                dblStudentCost += (businessArrayList.get(0).getFairInvestCost());
             }
         }
         else if (dept.equals ("Canadian and World Studies")) {
@@ -115,7 +118,13 @@ public class Main {
             cAndWArrayList.add (course);
         }
         else if (dept.equals ("English")) {
-            EnglishCourse course = new EnglishCourse(code, name, prereqs, intEnrolledRand);
+            EnglishCourse course;
+            int intNumOfConferences = 4;
+            if (dblLastAvg > 88.88) {
+                System.out.println ("Because your average mark from last year is greater than 88.88 you are given the advantage of less conference sessions in English");
+                course = new EnglishCourse(code, name, prereqs, intEnrolledRand, intNumOfConferences - 1);
+            }
+            course = new EnglishCourse(code, name, prereqs, intEnrolledRand, intNumOfConferences);
             englishArrayList.add (course);
         }
         else if (dept.equals ("French as a Second Language")) {
@@ -123,7 +132,14 @@ public class Main {
             frenchArrayList.add (course);
         }
         else if (dept.equals ("Health and Physical Education")) {
-            PhysEdCourse course = new PhysEdCourse(code, name, prereqs, intEnrolledRand);
+            int intRoomNum;
+            if (name.contains("fitness") || name.contains("Fitness")) {
+                intRoomNum = 2;
+            }
+            else {
+                intRoomNum = 1;
+            }
+            PhysEdCourse course = new PhysEdCourse(code, name, prereqs, intEnrolledRand, intRoomNum);
             physedArrayList.add (course);
             if (physedArrayList.size() == 1) {
                 dblStudentCost += (physedArrayList.get(0).buyGymSet());
@@ -142,16 +158,20 @@ public class Main {
         }
         else if (dept.equals ("Science")) {
             LabProject labAdd;
+            boolean requiresFormulaMemo;
             if (name.equals("Biology")) {
                 labAdd = bioLab;
+                requiresFormulaMemo = false;
             }
             else if (name.equals("Physics")) {
                 labAdd = physLab;
+                requiresFormulaMemo = true;
             }
             else {
                 labAdd = chemLab;
+                requiresFormulaMemo = true;
             }
-            ScienceCourse course = new ScienceCourse(code, name, prereqs, intEnrolledRand, labAdd);
+            ScienceCourse course = new ScienceCourse(code, name, prereqs, intEnrolledRand, labAdd, requiresFormulaMemo);
             scienceArrayList.add (course);
         }
         else {
