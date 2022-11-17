@@ -10,4 +10,16 @@ public class Retreat {
         this.strLocation = location;
     }
 
+    public String getDate() {
+        return strDate;
+    }
+
+    public int getSemester() {
+        return intSem;
+    }
+
+    public String getLocation() {
+        return strLocation;
+    }
+
 }

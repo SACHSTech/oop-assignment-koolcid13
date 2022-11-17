@@ -9,4 +9,8 @@ public class ReligionCourse extends Course {
         this.retreat = retreatObj;
     }
 
+    public Retreat getRetreat() {
+        return retreat;
+    }
+
 }

@@ -12,4 +12,19 @@ public class LabProject {
         this.dblTime = duration;
     }
 
+    public boolean getCoatReq() {
+        return NeedsCoat;
+    }
+
+    public boolean getPostLabReq() {
+        return hasPostLab;
+    }
+
+    public int getRoomNum() {
+        return intRoomNum;
+    }
+
+    public double getTime() {
+        return dblTime;
+    }
 }
