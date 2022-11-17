@@ -9,10 +9,10 @@ import java.util.*;
 //javadoc for all methods to be added
 public class Main {
     
-    static int int11courseCnt, intCreds, int12courseCnt;
+    static int intLastcourseCnt, intCreds, int12courseCnt;
     static String s, code = "", name = "", dept = "";
     static ArrayList<String> prereqs = new ArrayList<String>();
-    static ArrayList<String> g11courseList = new ArrayList <String>();
+    static ArrayList<String> prevCourseList = new ArrayList <String>();
     static List<ArtCourse> artArrayList = new ArrayList<ArtCourse>();
     static List<BusinessCourse> businessArrayList = new ArrayList<BusinessCourse>();
     static List<CAndWCourse> cAndWArrayList = new ArrayList<CAndWCourse>();
@@ -36,14 +36,14 @@ public class Main {
         strName = key.readLine(); 
         System.out.print ("Enter your last name please: ");
         strLast = key.readLine();
-        System.out.print ("How many courses did you take last year: ");
-        int11courseCnt = Integer.parseInt(key.readLine());
+        System.out.print ("How many courses have you take so far: ");
+        intLastcourseCnt = Integer.parseInt(key.readLine());
 
-        for (int i = 1; i <= int11courseCnt; i ++) {
+        for (int i = 1; i <= intLastcourseCnt; i ++) {
             String strInput;
             System.out.print ("Course number " + i + ": ");
             strInput = key.readLine();
-            g11courseList.add (strInput);
+            prevCourseList.add (strInput);
         }
 
         System.out.print ("How many credits do you have so far: ");
@@ -58,8 +58,6 @@ public class Main {
     
             findCode(strInputClass);     
         }
-      
-        System.out.println (prereqsMet());
         
     }
 
@@ -131,7 +129,7 @@ public class Main {
             scienceArrayList.add (course);
         }
         else {
-            TechCourse course = new TechCourse(code, name, prereqs, int11courseCnt, false);
+            TechCourse course = new TechCourse(code, name, prereqs, intLastcourseCnt, false);
             techArrayList.add (course);
         }
         prereqs.clear();
@@ -161,52 +159,52 @@ public class Main {
 
     public static boolean prereqsMet() {
         for (int i = 0; i < artArrayList.size(); i ++) {
-            if (! artArrayList.get(i).hasPrereqs(g11courseList)) {
+            if (! artArrayList.get(i).hasPrereqs(prevCourseList)) {
                 return false;
             }
         }
         for (int i = 0; i < businessArrayList.size(); i ++) {
-            if (! businessArrayList.get(i).hasPrereqs(g11courseList)) {
+            if (! businessArrayList.get(i).hasPrereqs(prevCourseList)) {
                 return false;
             }
         }
         for (int i = 0; i < cAndWArrayList.size(); i ++) {
-            if (! cAndWArrayList.get(i).hasPrereqs(g11courseList)) {
+            if (! cAndWArrayList.get(i).hasPrereqs(prevCourseList)) {
                 return false;
             }
         }
         for (int i = 0; i < englishArrayList.size(); i ++) {
-            if (! englishArrayList.get(i).hasPrereqs(g11courseList)) {
+            if (! englishArrayList.get(i).hasPrereqs(prevCourseList)) {
                 return false;
             }
         }
         for (int i = 0; i < frenchArrayList.size(); i ++) {
-            if (! frenchArrayList.get(i).hasPrereqs(g11courseList)) {
+            if (! frenchArrayList.get(i).hasPrereqs(prevCourseList)) {
                 return false;
             }
         }
         for (int i = 0; i < mathArrayList.size(); i ++) {
-            if (! mathArrayList.get(i).hasPrereqs(g11courseList)) {
+            if (! mathArrayList.get(i).hasPrereqs(prevCourseList)) {
                 return false;
             }
         }
         for (int i = 0; i < physedArrayList.size(); i ++) {
-            if (! physedArrayList.get(i).hasPrereqs(g11courseList)) {
+            if (! physedArrayList.get(i).hasPrereqs(prevCourseList)) {
                 return false;
             }
         }
         for (int i = 0; i < religionArrayList.size(); i ++) {
-            if (! religionArrayList.get(i).hasPrereqs(g11courseList)) {
+            if (! religionArrayList.get(i).hasPrereqs(prevCourseList)) {
                 return false;
             }
         }
         for (int i = 0; i < scienceArrayList.size(); i ++) {
-            if (! scienceArrayList.get(i).hasPrereqs(g11courseList)) {
+            if (! scienceArrayList.get(i).hasPrereqs(prevCourseList)) {
                 return false;
             }
         }
         for (int i = 0; i < techArrayList.size(); i ++) {
-            if (! techArrayList.get(i).hasPrereqs(g11courseList)) {
+            if (! techArrayList.get(i).hasPrereqs(prevCourseList)) {
                 return false;
             }
         }
