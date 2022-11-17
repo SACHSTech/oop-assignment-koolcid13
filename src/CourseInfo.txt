@@ -27,7 +27,7 @@ BDV4C1_0_Entrepreneurship: Venture Planning in an Electronic Age_Business Studie
 ---
 BBB4M1_0_International Business Fundamentals_Business Studies
 ---
-HSB4U1_7_ENG3U_ENG4U_HRT3M_HRT3ME_NBE3U1_NBE3UE_HSP3U_Challenge and Change in Society_Canadian and World Studies
+HSB4U1_7_ENG3U_ENG4U_HRT3M_HRT3ME_NBE3U_NBE3UE_HSP3U_Challenge and Change in Society_Canadian and World Studies
 ---
 HHS4U1_7_ENG3U_ENG4U_HRT3M_HRT3ME_NBE3U1_NBE3UE_HSP3U_Families in Canada_Canadian and World Studies
 ---
@@ -65,7 +65,7 @@ PLF4M1_10_PPL1O_PPL2O_PPL3O_PPZ3C_PPL4O_PSK4U_PAF3OF_PAF4OF_PAF3OM_PAF4OM_Recrea
 ---
 MAP4C1_3_MBF3C_MCF3M_MCR3U_Foundations for College Mathematics_Mathematics
 ---
-MCV4U1_1_MHF4U_Calculus and Vectors_Mathematics
+MCV4U1_1_MHF4U1_Calculus and Vectors_Mathematics
 ---
 MDM4U1_2_MCR3U_MCF3M_Mathematics of Data Management_Mathematics
 ---
@@ -87,7 +87,7 @@ HRE4O1_0_Church and Culture_Religion
 ---
 SBI4U1_1_SBI3U_Biology_Science
 ---
-SCH4U1_1_SCH3U1_Chemistry_Science
+SCH4U1_1_SCH3U_Chemistry_Science
 ---
 SCH4UE_1_SCH3UE_Chemistry (STREAM)_Science
 ---

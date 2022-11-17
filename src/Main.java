@@ -9,7 +9,7 @@ import java.util.*;
 //javadoc for all methods to be added
 public class Main {
     
-    static int intLastcourseCnt, intCreds, int12courseCnt;
+    static int intLastcourseCnt, intCreds, int12courseCnt, intReligionSemPreference;
     static double dblStudentCost = 0, dblLastAvg;
     static String s, code, name, dept;
     static boolean hasExemption;
@@ -43,11 +43,11 @@ public class Main {
         strName = key.readLine(); 
         System.out.print ("Enter your last name please: ");
         strLast = key.readLine();
-        System.out.print ("How many courses have you take so far: ");
+        System.out.print ("How many courses have you taken so far: ");
         intLastcourseCnt = Integer.parseInt(key.readLine());
         System.out.print ("What was your average last year: ");
         dblLastAvg = Integer.parseInt(key.readLine());
-        System.out.print ("Do you by any chance have a religion exemption? Type in true or false");
+        System.out.print ("Do you by any chance have a religion exemption? Type in true or false: ");
         hasExemption = Boolean.parseBoolean(key.readLine());
         
 
@@ -55,7 +55,7 @@ public class Main {
 
         for (int i = 1; i <= intLastcourseCnt; i ++) {
             String strInput;
-            System.out.print ("Course number " + i + ": ");
+            System.out.print ("Course number " + i + " from previous years: ");
             strInput = key.readLine();
             prevCourseList.add (strInput);
         }
@@ -67,11 +67,16 @@ public class Main {
         int12courseCnt = Integer.parseInt(key.readLine());
 
         for (int i = 0; i < int12courseCnt; i++) {
-            System.out.print ("What's one class on your selection? ");
+            System.out.print ("Please enter the course code for selection " +(i + 1) + " on your selection list: ");
             strInputClass = key.readLine();
     
             findCode(strInputClass);     
         }
+
+        System.out.print ("If you have a religion or philosophy course on your selection list, please indicate which semester you'd prefer for the course: ");
+        intReligionSemPreference = Integer.parseInt(key.readLine());
+
+        System.out.println (selectionValid());
         
     }
 
@@ -157,7 +162,13 @@ public class Main {
             mathArrayList.add (course);
         }
         else if (dept.equals("Religion")) {
-            ReligionCourse course = new ReligionCourse(code, name, prereqs, intEnrolledRand, retreat2);
+            ReligionCourse course;
+            if (intReligionSemPreference == 1) {
+                course = new ReligionCourse(code, name, prereqs, intEnrolledRand, retreat1);
+            }
+            else {
+                course = new ReligionCourse(code, name, prereqs, intEnrolledRand, retreat2);
+            }
             // choose between retreat 1 and 2
             religionArrayList.add (course);
         }
@@ -188,6 +199,9 @@ public class Main {
     }
 
     public static String selectionValid () {
+        if (! prereqsMet()) {
+            return "not enough prereqs";
+        }
         if (intCreds + int12courseCnt < 30) {
             return "insufficient credits";
         }
@@ -196,9 +210,6 @@ public class Main {
         }
         if (!hasReligion() && !hasExemption) {
             return "no religion";
-        }
-        if (! prereqsMet()) {
-            return "not enough prereqs";
         }
         return "ok";
     }
@@ -245,8 +256,19 @@ public class Main {
             }
         }
         for (int i = 0; i < mathArrayList.size(); i ++) {
-            if (! mathArrayList.get(i).hasPrereqs(prevCourseList)) {
+            if (!mathArrayList.get(i).hasPrereqs(prevCourseList) && !mathArrayList.get(i).getCode().equals("MCV4U1")) {
                 return false;
+            }
+            else if (mathArrayList.get(i).getCode().equals("MCV4U1")) {
+                boolean hasAdvFunctions = false;
+                for (int j = 0; j < mathArrayList.size(); j ++) {
+                    if (mathArrayList.get(j).getCode().equals("MHF4U1")) {
+                        hasAdvFunctions = true;
+                    }
+                }
+                if (hasAdvFunctions == false) {
+                    return false;
+                }
             }
         }
         for (int i = 0; i < physedArrayList.size(); i ++) {
