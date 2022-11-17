@@ -11,7 +11,8 @@ public class Main {
     
     static int intLastcourseCnt, intCreds, int12courseCnt;
     static double dblStudentCost = 0, dblLastAvg;
-    static String s, code = "", name = "", dept = "";
+    static String s, code, name, dept;
+    static boolean hasExemption;
     static ArrayList<String> prereqs = new ArrayList<String>();
     static ArrayList<String> prevCourseList = new ArrayList <String>();
     static List<ArtCourse> artArrayList = new ArrayList<ArtCourse>();
@@ -46,6 +47,10 @@ public class Main {
         intLastcourseCnt = Integer.parseInt(key.readLine());
         System.out.print ("What was your average last year: ");
         dblLastAvg = Integer.parseInt(key.readLine());
+        System.out.print ("Do you by any chance have a religion exemption? Type in true or false");
+        hasExemption = Boolean.parseBoolean(key.readLine());
+        
+
         
 
         for (int i = 1; i <= intLastcourseCnt; i ++) {
@@ -121,7 +126,7 @@ public class Main {
             EnglishCourse course;
             int intNumOfConferences = 4;
             if (dblLastAvg > 88.88) {
-                System.out.println ("Because your average mark from last year is greater than 88.88 you are given the advantage of less conference sessions in English");
+                System.out.println ("Because your average mark from last year is greater than 88.88 you are given the advantage of one less conference session in English");
                 course = new EnglishCourse(code, name, prereqs, intEnrolledRand, intNumOfConferences - 1);
             }
             course = new EnglishCourse(code, name, prereqs, intEnrolledRand, intNumOfConferences);
@@ -182,12 +187,15 @@ public class Main {
         // function to be checked later
     }
 
-    public static String selectionValid (boolean tookEng) {
+    public static String selectionValid () {
         if (intCreds + int12courseCnt < 30) {
             return "insufficient credits";
         }
-        if (! tookEng) {
+        if (! hasEnglish()) {
             return "no english";
+        }
+        if (!hasReligion() && !hasExemption) {
+            return "no religion";
         }
         if (! prereqsMet()) {
             return "not enough prereqs";
@@ -195,12 +203,19 @@ public class Main {
         return "ok";
     }
 
-    // change hasEnglish, very messy
-    public static boolean hasEnglish(String dep1, String dep2, String dep3, String dep4, String dep5, String dep6, String dep7, String dep8)  {
-        if (dep1 != "English" && dep2 != "English" && dep3 != "English" && dep4 != "English" && dep5 != "English" && dep6 != "English" && dep7 != "English" && dep8 != "English") {
-            return false;
-        } 
-        return true;
+    
+    public static boolean hasEnglish() {
+        if (englishArrayList.size() > 0) {
+            return true;
+        }
+        return false;
+    }
+
+    public static boolean hasReligion() {
+        if (religionArrayList.size() > 0) {
+            return true;
+        }
+        return false;
     }
 
     public static boolean prereqsMet() {
