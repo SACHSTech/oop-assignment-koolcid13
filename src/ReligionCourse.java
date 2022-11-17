@@ -2,8 +2,11 @@ import java.util.*;
 
 public class ReligionCourse extends Course {
 
-    public ReligionCourse (String strCode, String strName, ArrayList<String> prereqs, int intEnrolledCnt) {
+    private Retreat retreat;
+
+    public ReligionCourse (String strCode, String strName, ArrayList<String> prereqs, int intEnrolledCnt, Retreat retreatObj) {
         super (strCode, strName, prereqs, intEnrolledCnt);
+        this.retreat = retreatObj;
     }
 
 }
