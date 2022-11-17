@@ -3,6 +3,8 @@ import java.util.*;
 public class PhysEdCourse extends Course {
 
     private int intGymNum;
+    private double gymSetCost = 123.45;
+    private double gymShoesCost = 234.56;
 
     public PhysEdCourse (String strCode, String strName, ArrayList<String> prereqs, int intEnrolledCnt, int intGymNumber) {
         super (strCode, strName, prereqs, intEnrolledCnt);
@@ -14,11 +16,11 @@ public class PhysEdCourse extends Course {
     }
 
     public double buyGymSet() {
-        return 123.45;
+        return gymSetCost;
     }
 
     public double buyGymShoes() {
-        return 234.56;
+        return gymShoesCost;
     }
 
 
