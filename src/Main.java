@@ -25,6 +25,9 @@ public class Main {
     static List<TechCourse> techArrayList = new ArrayList<TechCourse>();
     static Retreat retreat1 = new Retreat("09/23/22", 1, "Camp Robin Hood");
     static Retreat retreat2 = new Retreat("01/01/23", 2, "Code Ninjas");
+    static LabProject bioLab = new LabProject(true, true, 224, 75);
+    static LabProject physLab = new LabProject(false, true, 222, 55);
+    static LabProject chemLab = new LabProject(false, true, 220, 70);
 
 
     public static void main(String[] args) throws IOException{
@@ -123,10 +126,21 @@ public class Main {
         }
         else if (dept.equals("Religion")) {
             ReligionCourse course = new ReligionCourse(code, name, prereqs, intEnrolledRand, retreat2);
+            // choose between retreat 1 and 2
             religionArrayList.add (course);
         }
         else if (dept.equals ("Science")) {
-            ScienceCourse course = new ScienceCourse(code, name, prereqs, int12courseCnt, intEnrolledRand);
+            LabProject labAdd;
+            if (name.equals("Biology")) {
+                labAdd = bioLab;
+            }
+            else if (name.equals("Physics")) {
+                labAdd = physLab;
+            }
+            else {
+                labAdd = chemLab;
+            }
+            ScienceCourse course = new ScienceCourse(code, name, prereqs, intEnrolledRand, labAdd);
             scienceArrayList.add (course);
         }
         else {
