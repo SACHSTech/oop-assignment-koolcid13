@@ -85,7 +85,13 @@ public class Main {
         System.out.print ("If you have a religion or philosophy course on your selection list, please indicate which semester you'd prefer for the course: ");
         intReligionSemPreference = Integer.parseInt(key.readLine());
 
-        System.out.println (selectionValid());
+        System.out.println ("Dear " + strName + " " + strLast + ",");
+        if (selectionValid().equals("ok")) {
+            System.out.println ("You have earned your initial approval from our system and are encouraged to wait until further notice regarding your timetable.");
+        }
+        else {
+            System.out.println ("It has come to the attention of our system that your course selection does not meet the requirements fully. For further information, please contact your guidance.");
+        }
         
     }
 
@@ -120,6 +126,7 @@ public class Main {
         
         Random random = new Random();
         int intEnrolledRand = random.nextInt (30);
+    
         if (alternateNum == 1) {
             altCourse1 = new Course (code, name, prereqs, intEnrolledRand);
             altCourse1.setAlternate();
@@ -128,6 +135,8 @@ public class Main {
             altCourse2 = new Course(code, name, prereqs, intEnrolledRand);
             altCourse2.setAlternate();
         }
+
+        //student is not added under the classes, happens at timetable level
 
         if (dept.equals ("Arts")) {
             ArtCourse course = new ArtCourse(code, name, prereqs, intEnrolledRand);
@@ -174,8 +183,8 @@ public class Main {
             PhysEdCourse course = new PhysEdCourse(code, name, prereqs, intEnrolledRand, intRoomNum);
             physedArrayList.add (course);
             if (physedArrayList.size() == 1) {
-                dblStudentCost += (physedArrayList.get(0).buyGymSet());
-                dblStudentCost += (physedArrayList.get(0).buyGymShoes());
+                dblStudentCost += (physedArrayList.get(0).getGymSetCost());
+                dblStudentCost += (physedArrayList.get(0).getGymShoesCost());
 
             }
         }
