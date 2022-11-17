@@ -15,11 +15,11 @@ public class PhysEdCourse extends Course {
         return intGymNum;
     }
 
-    public double buyGymSet() {
+    public double getGymSetCost() {
         return gymSetCost;
     }
 
-    public double buyGymShoes() {
+    public double getGymShoesCost() {
         return gymShoesCost;
     }
 

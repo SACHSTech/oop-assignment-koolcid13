@@ -132,6 +132,9 @@ public class Main {
         if (dept.equals ("Arts")) {
             ArtCourse course = new ArtCourse(code, name, prereqs, intEnrolledRand);
             artArrayList.add (course);
+            if (artArrayList.size() == 1) {
+                dblStudentCost += (artArrayList.get(0).getEssentialsCost());
+            }
         }
         else if (dept.equals ("Business Studies")) {
             BusinessCourse course = new BusinessCourse(code, name, prereqs, intEnrolledRand);
@@ -143,6 +146,7 @@ public class Main {
         else if (dept.equals ("Canadian and World Studies")) {
             CAndWCourse course = new CAndWCourse(code, name, prereqs, intEnrolledRand);
             cAndWArrayList.add (course);
+            dblStudentCost += cAndWArrayList.get(cAndWArrayList.size() - 1).getTripCost();
         }
         else if (dept.equals ("English")) {
             intEnrolledRand = random.nextInt (15);
