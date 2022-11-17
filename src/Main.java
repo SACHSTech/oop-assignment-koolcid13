@@ -10,6 +10,7 @@ import java.util.*;
 public class Main {
     
     static int intLastcourseCnt, intCreds, int12courseCnt;
+    static double dblStudentCost = 0;
     static String s, code = "", name = "", dept = "";
     static ArrayList<String> prereqs = new ArrayList<String>();
     static ArrayList<String> prevCourseList = new ArrayList <String>();
@@ -94,8 +95,10 @@ public class Main {
     }
 
     public static void objectCreation (String dept) {
+        
         Random random = new Random();
         int intEnrolledRand = random.nextInt (30);
+
         if (dept.equals ("Arts")) {
             ArtCourse course = new ArtCourse(code, name, prereqs, intEnrolledRand);
             artArrayList.add (course);
@@ -103,6 +106,9 @@ public class Main {
         else if (dept.equals ("Business Studies")) {
             BusinessCourse course = new BusinessCourse(code, name, prereqs, intEnrolledRand);
             businessArrayList.add (course);
+            if (businessArrayList.size() == 1) {
+                dblStudentCost += (businessArrayList.get(0).businessFairInvest());
+            }
         }
         else if (dept.equals ("Canadian and World Studies")) {
             CAndWCourse course = new CAndWCourse(code, name, prereqs, intEnrolledRand);
@@ -119,6 +125,11 @@ public class Main {
         else if (dept.equals ("Health and Physical Education")) {
             PhysEdCourse course = new PhysEdCourse(code, name, prereqs, intEnrolledRand);
             physedArrayList.add (course);
+            if (physedArrayList.size() == 1) {
+                dblStudentCost += (physedArrayList.get(0).buyGymSet());
+                dblStudentCost += (physedArrayList.get(0).buyGymShoes());
+
+            }
         }
         else if (dept.equals ("Mathematics")) {
             MathCourse course = new MathCourse(code, name, prereqs, intEnrolledRand);

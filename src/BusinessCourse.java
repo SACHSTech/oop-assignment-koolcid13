@@ -6,4 +6,8 @@ public class BusinessCourse extends Course {
         super (strCode, strName, prereqs, intEnrolledCnt);
     }
 
+    public double businessFairInvest() {
+        return 78.9;
+    }
+
 }

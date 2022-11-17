@@ -6,4 +6,13 @@ public class PhysEdCourse extends Course {
         super (strCode, strName, prereqs, intEnrolledCnt);
     }
 
+    public double buyGymSet() {
+        return 123.45;
+    }
+
+    public double buyGymShoes() {
+        return 234.56;
+    }
+
+
 }
