@@ -23,6 +23,8 @@ public class Main {
     static List<ReligionCourse> religionArrayList = new ArrayList<ReligionCourse>();
     static List<ScienceCourse> scienceArrayList = new ArrayList<ScienceCourse>();
     static List<TechCourse> techArrayList = new ArrayList<TechCourse>();
+    static Retreat retreat1 = new Retreat("09/23/22", 1, "Camp Robin Hood");
+    static Retreat retreat2 = new Retreat("01/01/23", 2, "Code Ninjas");
 
 
     public static void main(String[] args) throws IOException{
@@ -83,7 +85,6 @@ public class Main {
             
             objectCreation(dept);
             break;
-
         }
 
         
@@ -121,7 +122,7 @@ public class Main {
             mathArrayList.add (course);
         }
         else if (dept.equals("Religion")) {
-            ReligionCourse course = new ReligionCourse(code, name, prereqs, intEnrolledRand);
+            ReligionCourse course = new ReligionCourse(code, name, prereqs, intEnrolledRand, retreat2);
             religionArrayList.add (course);
         }
         else if (dept.equals ("Science")) {
