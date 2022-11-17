@@ -30,6 +30,7 @@ public class Main {
     static LabProject bioLab = new LabProject(true, true, 224, 75);
     static LabProject physLab = new LabProject(false, true, 222, 55);
     static LabProject chemLab = new LabProject(false, true, 220, 70);
+    static Course altCourse1, altCourse2;
 
 
     public static void main(String[] args) throws IOException{
@@ -67,11 +68,19 @@ public class Main {
         int12courseCnt = Integer.parseInt(key.readLine());
 
         for (int i = 0; i < int12courseCnt; i++) {
-            System.out.print ("Please enter the course code for selection " +(i + 1) + " on your selection list: ");
+            System.out.print ("Please enter the course code for selection " + (i + 1) + " on your selection list: ");
             strInputClass = key.readLine();
     
-            findCode(strInputClass);     
+            findCode(strInputClass, 0);     
         }
+
+        System.out.println ("Please enter two course codes as your alternate options.");
+        System.out.print ("First alternate: ");
+        strInputClass = key.readLine();
+        findCode(strInputClass, 1);
+        System.out.print("Second alternate: ");
+        strInputClass = key.readLine();
+        findCode(strInputClass, 2);
 
         System.out.print ("If you have a religion or philosophy course on your selection list, please indicate which semester you'd prefer for the course: ");
         intReligionSemPreference = Integer.parseInt(key.readLine());
@@ -80,7 +89,7 @@ public class Main {
         
     }
 
-    public static void findCode (String strInputClass) throws FileNotFoundException, IOException{
+    public static void findCode (String strInputClass, int alternateNum) throws FileNotFoundException, IOException{
         //read file to find course data, search implemented
         File f = new File("src/CourseInfo.txt");
         BufferedReader freader = new BufferedReader (new FileReader(f));
@@ -100,17 +109,25 @@ public class Main {
             name = st[2 + num];
             dept = st[3 + num];
             
-            objectCreation(dept);
+            objectCreation(dept, alternateNum);
             break;
         }
 
         
     }
 
-    public static void objectCreation (String dept) {
+    public static void objectCreation (String dept, int alternateNum) {
         
         Random random = new Random();
         int intEnrolledRand = random.nextInt (30);
+        if (alternateNum == 1) {
+            altCourse1 = new Course (code, name, prereqs, intEnrolledRand);
+            altCourse1.setAlternate();
+        }
+        if (alternateNum == 2) {
+            altCourse2 = new Course(code, name, prereqs, intEnrolledRand);
+            altCourse2.setAlternate();
+        }
 
         if (dept.equals ("Arts")) {
             ArtCourse course = new ArtCourse(code, name, prereqs, intEnrolledRand);
@@ -128,6 +145,7 @@ public class Main {
             cAndWArrayList.add (course);
         }
         else if (dept.equals ("English")) {
+            intEnrolledRand = random.nextInt (15);
             EnglishCourse course;
             int intNumOfConferences = 4;
             if (dblLastAvg > 88.88) {
@@ -162,6 +180,7 @@ public class Main {
             mathArrayList.add (course);
         }
         else if (dept.equals("Religion")) {
+            intEnrolledRand = random.nextInt (30);
             ReligionCourse course;
             if (intReligionSemPreference == 1) {
                 course = new ReligionCourse(code, name, prereqs, intEnrolledRand, retreat1);

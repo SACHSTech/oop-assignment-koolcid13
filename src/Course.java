@@ -8,6 +8,7 @@ public class Course {
     private String strName;
     private ArrayList<String> prereqs;
     private int intEnrolledCnt;
+    private boolean isAlternative;
 
     //javadoc
     public Course (String strCode, String strName, ArrayList<String> prereqsInput, int intEnrolledCnt) {
@@ -15,6 +16,11 @@ public class Course {
         this.strName = strName;
         this.prereqs = (ArrayList)prereqsInput.clone(); // double check if works or try clone
         this.intEnrolledCnt = intEnrolledCnt;
+        this.isAlternative = false;
+    }
+
+    public void setAlternate() {
+        this.isAlternative = true;
     }
 
     public String getName() {
@@ -31,6 +37,10 @@ public class Course {
 
     public int getEnrolledCnt() {
         return intEnrolledCnt;
+    }
+
+    public boolean getIsAlternate() {
+        return isAlternative;
     }
 
     public boolean hasPrereqs(ArrayList<String> coursesTaken) {
