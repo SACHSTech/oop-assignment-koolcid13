@@ -86,6 +86,7 @@ public class Main {
         System.out.print ("If you have a religion or philosophy course on your selection list, please indicate which semester you'd prefer for the course: ");
         intReligionSemPreference = Integer.parseInt(key.readLine());
 
+        // based on selectionValid, says if approved or not
         System.out.println ("Dear " + strName + " " + strLast + ",");
         if (selectionValid().equals("ok")) {
             System.out.println ("You have earned your initial approval from our system and are encouraged to wait until further notice regarding your timetable.");
@@ -123,6 +124,7 @@ public class Main {
             name = st[2 + num];
             dept = st[3 + num];
             
+            // call to object creation after course code found on txt file
             objectCreation(dept, alternateNum);
             break;
         }
@@ -142,6 +144,8 @@ public class Main {
         Random random = new Random();
         int intEnrolledRand = random.nextInt (30);
     
+
+        // alternate courses if's
         if (alternateNum == 1) {
             altCourse1 = new Course (code, name, prereqs, intEnrolledRand);
             altCourse1.setAlternate();
@@ -151,6 +155,7 @@ public class Main {
             altCourse2.setAlternate();
         }
 
+        // instantiation based on course type and variables assigned in class
         if (dept.equals ("Arts")) {
             ArtCourse course = new ArtCourse(code, name, prereqs, intEnrolledRand);
             artArrayList.add (course);
@@ -195,7 +200,7 @@ public class Main {
             }
             PhysEdCourse course = new PhysEdCourse(code, name, prereqs, intEnrolledRand, intRoomNum);
             physedArrayList.add (course);
-            if (physedArrayList.size() == 1) {
+            if (physedArrayList.size() == 1) { // student cost calculated
                 dblStudentCost += (physedArrayList.get(0).getGymSetCost());
                 dblStudentCost += (physedArrayList.get(0).getGymShoesCost());
 
@@ -220,6 +225,7 @@ public class Main {
         else if (dept.equals ("Science")) {
             LabProject labAdd;
             boolean requiresFormulaMemo;
+            // lab specifications according to class
             if (name.equals("Biology")) {
                 labAdd = bioLab;
                 labAdd.setHasPostLab();
@@ -334,7 +340,7 @@ public class Main {
         for (int i = 0; i < mathArrayList.size(); i ++) {
             if (!mathArrayList.get(i).hasPrereqs(prevCourseList) && !mathArrayList.get(i).getCode().equals("MCV4U1")) {
                 return false;
-            }
+            } // prereqs for advanced functions and calculus and vectors as co-requisites
             else if (mathArrayList.get(i).getCode().equals("MCV4U1")) {
                 boolean hasAdvFunctions = false;
                 for (int j = 0; j < mathArrayList.size(); j ++) {

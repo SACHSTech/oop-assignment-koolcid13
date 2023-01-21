@@ -14,7 +14,7 @@ public class Course {
     public Course (String strCode, String strName, ArrayList<String> prereqsInput, int intEnrolledCnt) {
         this.strCode = strCode;
         this.strName = strName;
-        this.prereqs = (ArrayList)prereqsInput.clone(); // double check if works or try clone
+        this.prereqs = (ArrayList)prereqsInput.clone();
         this.intEnrolledCnt = intEnrolledCnt;
         this.isAlternative = false;
     }
