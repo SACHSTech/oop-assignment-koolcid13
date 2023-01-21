@@ -409,5 +409,9 @@ public class Main {
             System.out.println ("");
         }
 
+        if (dblStudentCost > 0) {
+            System.out.println ("You will also have to pay an estimated fee of " + dblStudentCost + " dollars.");
+        }
+
     }
 }
