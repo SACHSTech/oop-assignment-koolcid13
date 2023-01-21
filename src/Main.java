@@ -64,7 +64,7 @@ public class Main {
         System.out.print ("How many credits do you have so far: ");
         intCreds = Integer.parseInt(key.readLine());
         
-        System.out.print ("How many courses are you planning on taking this year: ");
+        System.out.print ("How many courses are you planning to take this year: ");
         int12courseCnt = Integer.parseInt(key.readLine());
 
         for (int i = 0; i < int12courseCnt; i++) {
@@ -95,8 +95,8 @@ public class Main {
         
     }
 
-    public static void findCode (String strInputClass, int alternateNum) throws FileNotFoundException, IOException{
-        //read file to find course data, search implemented
+    public static void findCode (String strInputClass, int alternateNum) throws FileNotFoundException, IOException {
+        // read file to find course data, search implemented
         File f = new File("src/CourseInfo.txt");
         BufferedReader freader = new BufferedReader (new FileReader(f));
         while((s = freader.readLine()) != null) {
@@ -131,7 +131,7 @@ public class Main {
             altCourse1 = new Course (code, name, prereqs, intEnrolledRand);
             altCourse1.setAlternate();
         }
-        if (alternateNum == 2) {
+        else if (alternateNum == 2) {
             altCourse2 = new Course(code, name, prereqs, intEnrolledRand);
             altCourse2.setAlternate();
         }
@@ -232,7 +232,6 @@ public class Main {
             techArrayList.add (course);
         }
         prereqs.clear();
-        // function to be checked later
     }
 
     public static String selectionValid () {
