@@ -10,7 +10,7 @@ public class Course {
     private int intEnrolledCnt;
     private boolean isAlternative;
 
-    //javadoc
+    
     public Course (String strCode, String strName, ArrayList<String> prereqsInput, int intEnrolledCnt) {
         this.strCode = strCode;
         this.strName = strName;

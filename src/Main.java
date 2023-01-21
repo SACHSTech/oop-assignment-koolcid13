@@ -27,9 +27,9 @@ public class Main {
     static List<TechCourse> techArrayList = new ArrayList<TechCourse>();
     static Retreat retreat1 = new Retreat("09/23/22", 1, "Camp Robin Hood");
     static Retreat retreat2 = new Retreat("01/01/23", 2, "Code Ninjas");
-    static LabProject bioLab = new LabProject(true, true, 224, 75);
-    static LabProject physLab = new LabProject(false, true, 222, 55);
-    static LabProject chemLab = new LabProject(false, true, 220, 70);
+    static LabProject bioLab = new LabProject(224, 75);
+    static LabProject physLab = new LabProject(222, 55);
+    static LabProject chemLab = new LabProject(220, 70);
     static Course altCourse1, altCourse2;
 
 
@@ -209,14 +209,19 @@ public class Main {
             boolean requiresFormulaMemo;
             if (name.equals("Biology")) {
                 labAdd = bioLab;
+                labAdd.setHasPostLab();
+                labAdd.setNeedsCoat();
                 requiresFormulaMemo = false;
             }
             else if (name.equals("Physics")) {
                 labAdd = physLab;
+                labAdd.setHasPostLab();
                 requiresFormulaMemo = true;
             }
             else {
                 labAdd = chemLab;
+                labAdd.setHasPostLab();
+                labAdd.setNeedsCoat();
                 requiresFormulaMemo = true;
             }
             ScienceCourse course = new ScienceCourse(code, name, prereqs, intEnrolledRand, labAdd, requiresFormulaMemo);
