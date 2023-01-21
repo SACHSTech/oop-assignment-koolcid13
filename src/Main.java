@@ -88,6 +88,7 @@ public class Main {
         System.out.println ("Dear " + strName + " " + strLast + ",");
         if (selectionValid().equals("ok")) {
             System.out.println ("You have earned your initial approval from our system and are encouraged to wait until further notice regarding your timetable.");
+            printCourseDetails();
         }
         else {
             System.out.println ("It has come to the attention of our system that your course selection does not meet the requirements fully. For further information, please contact your guidance.");
@@ -331,4 +332,82 @@ public class Main {
     }
 
 
+    public static void printCourseDetails() {
+        System.out.println ("");
+        System.out.println ("");
+        System.out.println ("YOUR APPROVED COURSES WILL BE AS FOLLOWED:");
+
+
+        for (int i = 0; i < artArrayList.size(); i ++) {
+            System.out.println (artArrayList.get(i).getName() + ", " + artArrayList.get(i).getCode());
+            System.out.println ("");
+        }
+        
+        for (int i = 0; i < businessArrayList.size(); i ++) {
+            System.out.println (businessArrayList.get(i).getName() + ", " + businessArrayList.get(i).getCode());
+            System.out.println ("");
+        }
+
+        for (int i = 0; i < cAndWArrayList.size(); i ++) {
+            System.out.println (cAndWArrayList.get(i).getName() + ", " + cAndWArrayList.get(i).getCode());
+            System.out.println ("");
+        }
+
+        for (int i = 0; i < englishArrayList.size(); i ++) {
+            System.out.println (englishArrayList.get(i).getName() + ", " + englishArrayList.get(i).getCode());
+            System.out.println ("In this course you will be reading " + englishArrayList.get(i).getNovelName() + ".");
+            System.out.println ("You will also have a total of " + englishArrayList.get(i).getNumOfConferences() + " conferences.");
+            System.out.println ("");
+        }
+
+        for (int i = 0; i < frenchArrayList.size(); i ++) {
+            System.out.println (frenchArrayList.get(i).getName() + ", " + frenchArrayList.get(i).getCode());
+            if (frenchArrayList.get(i).getBookReadingReq() == true) {
+                System.out.println("In this course, you WILL also read books.");
+            }
+            System.out.println ("");
+        }
+
+        for (int i = 0; i < mathArrayList.size(); i ++) {
+            System.out.println (mathArrayList.get(i).getName() + ", " + mathArrayList.get(i).getCode());
+            System.out.println ("");
+        }
+
+        for (int i = 0; i < physedArrayList.size(); i ++) {
+            System.out.println (physedArrayList.get(i).getName() + ", " + physedArrayList.get(i).getCode());
+            System.out.println ("Your gym number is going to be " + physedArrayList.get(i).getGymNumber() + ".");
+            System.out.println ("");
+        }
+
+        for (int i = 0; i < religionArrayList.size(); i ++) {
+            System.out.println (religionArrayList.get(i).getName() + ", " + religionArrayList.get(i).getCode());
+            System.out.println ("Your retreat will take place on " + religionArrayList.get(i).getRetreat().getDate() + ", during semester " + religionArrayList.get(i).getRetreat().getSemester() + " and the location will be " + religionArrayList.get(i).getRetreat().getLocation() + ".");
+            System.out.println ("");
+
+        }
+
+        for (int i = 0; i < scienceArrayList.size(); i ++) {
+            System.out.println (scienceArrayList.get(i).getName() + ", " + scienceArrayList.get(i).getCode());
+            if (scienceArrayList.get(i).getMemorizationReq() == true) {
+                System.out.println("By the way, you will have to memorize formulae for this class.");
+            }    
+            System.out.println ("Your lab will be at room " + scienceArrayList.get(i).getLabProject().getRoomNum() + ".");       
+            if (scienceArrayList.get(i).getLabProject().getCoatReq() == true) {
+                System.out.println ("You will need a lab coat for your lab project.");
+            }
+            if (scienceArrayList.get(i).getLabProject().availableToEveryone() == true) {
+                System.out.println ("This lab is open to students from other schools.");
+            }
+            System.out.println ("");
+        }
+
+        for (int i = 0; i < techArrayList.size(); i ++) {
+            System.out.println (techArrayList.get(i).getName() + ", " + techArrayList.get(i).getCode());
+            if (techArrayList.get(i).getDeviceRequirement() == true) {
+                System.out.println ("You will need your own device for this course.");
+            }
+            System.out.println ("");
+        }
+
+    }
 }
