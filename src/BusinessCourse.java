@@ -8,6 +8,12 @@ public class BusinessCourse extends Course {
         super (strCode, strName, prereqs, intEnrolledCnt);
     }
 
+    /**
+     * getter method for fair investment costs
+     *
+     * @return returns value of fairInvestment
+     *
+     */
     public double getFairInvestCost() {
         return fairInvestment;
     }

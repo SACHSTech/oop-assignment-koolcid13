@@ -1,12 +1,13 @@
-// package line
-
 import java.io.*;
 import java.util.*;
 
 
-//header
+/**
+* A program that demonstrates how the utilization of object-oriented programming can be applied to systems, such as a course selection design
+* @author: Avin A.
+*
+*/
 
-//javadoc for all methods to be added
 public class Main {
     
     static int intLastcourseCnt, intCreds, int12courseCnt, intReligionSemPreference;
@@ -96,6 +97,14 @@ public class Main {
         
     }
 
+
+    /**
+     * reads file to search for course code, calls object creation methods for instantiation
+     * 
+     * @param1 strInputClass course code
+     * @param2 alternateNum 0 if regular class, 1 or 2 if alt class
+     *
+     */
     public static void findCode (String strInputClass, int alternateNum) throws FileNotFoundException, IOException {
         // read file to find course data, search implemented
         File f = new File("src/CourseInfo.txt");
@@ -108,11 +117,9 @@ public class Main {
             }
             int num = Integer.parseInt(st[1]);
 
-            // add clear arraylist when made into method
             for (int i = 2; i < 2 + num; i ++) {
                 prereqs.add(st[i]);
             }
-            // change declaration when made into method
             name = st[2 + num];
             dept = st[3 + num];
             
@@ -123,6 +130,13 @@ public class Main {
         
     }
 
+    /**
+     * object instantiation method to create objects based on department
+     * 
+     * @param1 dept department of course
+     * @param2 alternateNum 0 if regular class, 1 or 2 if alt class
+     *
+     */
     public static void objectCreation (String dept, int alternateNum) {
         
         Random random = new Random();
@@ -136,8 +150,6 @@ public class Main {
             altCourse2 = new Course(code, name, prereqs, intEnrolledRand);
             altCourse2.setAlternate();
         }
-
-        //student is not added under the classes, happens at timetable level
 
         if (dept.equals ("Arts")) {
             ArtCourse course = new ArtCourse(code, name, prereqs, intEnrolledRand);
@@ -235,6 +247,13 @@ public class Main {
         prereqs.clear();
     }
 
+    /**
+     * checks if selection is valid based on preset conditions
+     * 
+     * @return returns string ok if valid, other strings if not (based on error)
+     *
+     */
+    
     public static String selectionValid () {
         if (! prereqsMet()) {
             return "not enough prereqs";
@@ -252,6 +271,12 @@ public class Main {
     }
 
     
+    /**
+     * checks if english was selected
+     * 
+     * @return true if english selected, false otherwise
+     *
+     */
     public static boolean hasEnglish() {
         if (englishArrayList.size() > 0) {
             return true;
@@ -259,6 +284,13 @@ public class Main {
         return false;
     }
 
+
+    /**
+     * checks if religion was selected
+     * 
+     * @return true if religion selected, false otherwise
+     *
+     */
     public static boolean hasReligion() {
         if (religionArrayList.size() > 0) {
             return true;
@@ -266,6 +298,13 @@ public class Main {
         return false;
     }
 
+
+    /**
+     * checks if prerequisite courses were taken
+     * 
+     * @return true if prereqs were taken, false otherwise
+     *
+     */
     public static boolean prereqsMet() {
         for (int i = 0; i < artArrayList.size(); i ++) {
             if (! artArrayList.get(i).hasPrereqs(prevCourseList)) {
@@ -332,6 +371,10 @@ public class Main {
     }
 
 
+    /**
+     * prints course selection
+     *
+     */
     public static void printCourseDetails() {
         System.out.println ("");
         System.out.println ("");

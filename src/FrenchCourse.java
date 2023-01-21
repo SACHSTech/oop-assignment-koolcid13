@@ -8,6 +8,13 @@ public class FrenchCourse extends Course {
         super (strCode, strName, prereqs, intEnrolledCnt);
     }
 
+
+    /**
+     * getter method for book reading requirement
+     *
+     * @return returns value of willReadBook
+     *
+     */
     public boolean getBookReadingReq() {
         return willReadBook;
     }

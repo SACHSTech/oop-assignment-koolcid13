@@ -9,6 +9,12 @@ public class ReligionCourse extends Course {
         this.retreat = retreatObj;
     }
 
+    /**
+     * getter method for retreat class
+     *
+     * @return returns class of retreat
+     *
+     */
     public Retreat getRetreat() {
         return retreat;
     }

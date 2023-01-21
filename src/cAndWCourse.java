@@ -8,6 +8,13 @@ public class CAndWCourse extends Course {
         super (strCode, strName, prereqs, intEnrolledCnt);
     }
 
+
+    /**
+     * getter method for trip costs
+     *
+     * @return returns value of fieldTripCost
+     *
+     */
     public double getTripCost() {
         return fieldTripCost;
     }

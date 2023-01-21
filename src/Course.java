@@ -19,30 +19,74 @@ public class Course {
         this.isAlternative = false;
     }
 
+    /**
+     * seter method for isAlternative, changed to true for alt courses
+     *
+     */
     public void setAlternate() {
         this.isAlternative = true;
     }
 
+    /**
+     * getter method for name
+     *
+     * @return returns value of strName
+     *
+     */
     public String getName() {
         return  this.strName;
     }
 
+
+    /**
+     * getter method for code
+     *
+     * @return returns value of strCode
+     *
+     */
     public String getCode() {
         return this.strCode;
     }
 
+
+    /**
+     * getter method for prereqs
+     *
+     * @return returns value of prereqs
+     *
+     */
     public ArrayList<String> getPrereqs() {
         return prereqs;
     }
 
+
+    /**
+     * getter method for enrolled count
+     *
+     * @return returns value of intEnrolledCnt
+     *
+     */
     public int getEnrolledCnt() {
         return intEnrolledCnt;
     }
 
+    /**
+     * getter method for isAlternate
+     *
+     * @return returns value of isAlternate
+     *
+     */
     public boolean getIsAlternate() {
         return isAlternative;
     }
 
+    /**
+     * method to determine whether the prerequisites of a course have been taken
+     *
+     * @param coursesTaken arrayList containing the courses taken
+     * @return returns true if prerequisites taken, false if not
+     *
+     */
     public boolean hasPrereqs(ArrayList<String> coursesTaken) {
         for (String course : coursesTaken) {
             for (String prereqCourse : prereqs) {

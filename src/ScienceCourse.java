@@ -11,10 +11,23 @@ public class ScienceCourse extends Course {
         this.needToMemorizeFormula = formulaReq;
     }
 
+    /**
+     * getter method for memorization requirement
+     *
+     * @return returns value of needToMemorizeFormula
+     *
+     */
     public boolean getMemorizationReq() {
         return needToMemorizeFormula;
     }
 
+
+    /**
+     * getter method for lab project class
+     *
+     * @return returns class of lab
+     *
+     */
     public LabProject getLabProject() {
         return lab;
     }

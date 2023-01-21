@@ -10,10 +10,23 @@ public class EnglishCourse extends Course {
         this.intNumOfConferences = intNumOfConferences;
     }
 
+
+    /**
+     * getter method for novel name
+     *
+     * @return returns value of strNovel
+     *
+     */
     public String getNovelName() {
         return strNovel;
     }
 
+    /**
+     * getter method for number of conferences
+     *
+     * @return returns value of intNumOfConferences
+     *
+     */
     public int getNumOfConferences() {
         return intNumOfConferences;
     }

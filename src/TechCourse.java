@@ -9,6 +9,12 @@ public class TechCourse extends Course {
         this.requiresDevice = requiresDevice;
     }
 
+    /**
+     * getter method for device requirement
+     *
+     * @return returns value of requiresDevice
+     *
+     */
     public boolean getDeviceRequirement() {
         return requiresDevice;
     }

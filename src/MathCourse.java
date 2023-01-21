@@ -14,6 +14,13 @@ public class MathCourse extends Course {
         }
     }
 
+
+    /**
+     * getter method for number of tables
+     *
+     * @return returns value of intTables
+     *
+     */
     public int getNumOfTables() {
         return intTables;
     }
