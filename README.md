@@ -4,7 +4,7 @@
 ## Class Diagram
 <br>
 
-![Diagram](src/diagram.png)
+![Diagram](src/diagram.jpg)
 
 <br>
 
